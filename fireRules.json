@@ -11,6 +11,25 @@
                     ".validate": "newData.isString() && newData.val().matches(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}$/i)"
                 }
             }
+        },
+    "businesses": {
+            "$business": {
+                "number": {
+                  ".validate": "newData.isInteger() && newData.val().length()==9"
+                },
+                "name": {
+                  ".validate": "newData.isString() && newData.val().length()>1 && newData.val().length()<49"
+                },
+                "primaryBusiness": {
+                  ".validate": "newData.isString() && ((newData.val().matches('Fisher'))|(newData.val().matches('Distributor'))|(newData.val().matches('Processor'))|(newData.val().matches('Fish Monger'))"
+                },
+                "address": {
+                  ".validate": "newData.isInteger() && (newData.val().length()>0 &&  newData.val().length()<51)"
+                },
+                "provTerr": {
+                  ".validate": "newData.isString() && newData.val().matches(/^('AB')|('BC')|('MB')|('NB')|('NL')|('NS')|('NT')|('NU')|('ON')|('PE')|('QC')|('SK')|('YT')|(' ')|$/)"
+                }
+            }
         }
   }
 }

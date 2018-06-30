@@ -27,13 +27,14 @@ public class MainActivity extends Activity {
 
         //Set-up Firebase
         appData.firebaseDBInstance = FirebaseDatabase.getInstance();
-        appData.firebaseReference = appData.firebaseDBInstance.getReference("contacts");
+        appData.firebaseReference = appData.firebaseDBInstance.getReference("businesses");
 
         //Get the reference to the UI contents
         contactListView = (ListView) findViewById(R.id.listView);
 
         //Set up the List View
-       firebaseAdapter = new FirebaseListAdapter<Contact>(this, Contact.class,
+
+        firebaseAdapter = new FirebaseListAdapter<Contact>(this, Contact.class,
                 android.R.layout.simple_list_item_1, appData.firebaseReference) {
             @Override
             protected void populateView(View v, Contact model, int position) {
@@ -54,7 +55,7 @@ public class MainActivity extends Activity {
 
     public void createContactButton(View v)
     {
-        Intent intent=new Intent(this, CreateContactAcitivity.class);
+        Intent intent=new Intent(this, CreateContactActivity.class);
         startActivity(intent);
     }
 

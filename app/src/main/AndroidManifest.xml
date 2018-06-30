@@ -23,7 +23,9 @@
         <activity
             android:name=".DetailViewActivity"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".CreateContactAcitivity"
+        <activity android:name=".CreateContactActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".CreateBusinessActivity"
             android:parentActivityName=".MainActivity" />
     </application>
 
